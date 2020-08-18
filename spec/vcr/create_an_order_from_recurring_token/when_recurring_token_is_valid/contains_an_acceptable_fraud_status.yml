@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.playground.klarna.com/customer-token/v1/tokens/93c69742-a378-43b7-9ae6-6d457dd4dfc6/order
+    body:
+      encoding: UTF-8
+      string: '{"locale":"sv-SE","order_lines":[{"type":"digital","reference":"11111","name":"The
+        good stuff","quantity":1,"unit_price":34900,"tax_rate":2500,"total_amount":34900,"total_discount_amount":0,"total_tax_amount":6980}],"order_amount":34900,"order_tax_amount":6980,"purchase_currency":"SEK","auto_capture":true}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Basic UEsyNjk2OF84NmIzNopeMDRlYjc6d1pZaVI1dWE4NlVIaUczQw==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      date:
+      - Wed, 30 Sep 2020 12:31:01 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - openresty
+      vary:
+      - Accept-Encoding
+      render-time:
+      - '336'
+      klarna-correlation-id:
+      - fb282d02-3bdb-4355-a76e-a5ae5bbc5f4b
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "order_id" : "9cacb86b-8d57-2c55-8f4b-944fa5ce9e44",
+          "fraud_status" : "ACCEPTED",
+          "authorized_payment_method" : {
+            "type" : "invoice"
+          }
+        }
+  recorded_at: Wed, 30 Sep 2020 12:31:03 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.playground.klarna.com/ordermanagement/v1/orders/7ce4ee13-973c-6f49-a30e-85a0bc675997
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Basic UEsyNjk2OF84NmIzNopeXDRlYjc6d1pZaVI1dWE4NlVIaUczQw==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      date:
+      - Wed, 30 Sep 2020 20:14:41 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - openresty
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-xss-protection:
+      - 1; mode=block
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      x-frame-options:
+      - DENY
+      klarna-correlation-id:
+      - 168ec60f-f74f-4e25-ba5b-c44aa557b358
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvcmRlcl9pZCI6IjdjZTRlZTEzLTk3M2MtNmY0OS1hMzBlLTg1YTBiYzY3NTk5NyIsInN0YXR1cyI6IkNBUFRVUkVEIiwiZnJhdWRfc3RhdHVzIjoiQUNDRVBURUQiLCJvcmRlcl9hbW91bnQiOjk5MDAsIm9yaWdpbmFsX29yZGVyX2Ftb3VudCI6OTkwMCwiY2FwdHVyZWRfYW1vdW50Ijo5OTAwLCJyZWZ1bmRlZF9hbW91bnQiOjk5MDAsInJlbWFpbmluZ19hdXRob3JpemVkX2Ftb3VudCI6MCwicHVyY2hhc2VfY3VycmVuY3kiOiJTRUsiLCJsb2NhbGUiOiJzdi1TRSIsIm9yZGVyX2xpbmVzIjpbeyJyZWZlcmVuY2UiOiIxIiwidHlwZSI6ImRpZ2l0YWwiLCJxdWFudGl0eSI6MSwicXVhbnRpdHlfdW5pdCI6IiIsIm5hbWUiOiJCUkYtYW5hbHlzIiwidG90YWxfYW1vdW50Ijo5OTAwLCJ1bml0X3ByaWNlIjo5OTAwLCJ0b3RhbF9kaXNjb3VudF9hbW91bnQiOjAsInRheF9yYXRlIjoyNTAwLCJ0b3RhbF90YXhfYW1vdW50IjoxOTgwfV0sImtsYXJuYV9yZWZlcmVuY2UiOiIxVkhTSEsxUSIsImN1c3RvbWVyIjp7ImRhdGVfb2ZfYmlydGgiOiIxOTQxLTAzLTIxIiwidHlwZSI6InBlcnNvbiJ9LCJiaWxsaW5nX2FkZHJlc3MiOnsiZ2l2ZW5fbmFtZSI6IlRlc3RwZXJzb24tc2UiLCJmYW1pbHlfbmFtZSI6IkFwcHJvdmVkIiwidGl0bGUiOiIiLCJzdHJlZXRfYWRkcmVzcyI6IlN0w6VyZ2F0YW4gMSIsInN0cmVldF9hZGRyZXNzMiI6IiIsInBvc3RhbF9jb2RlIjoiMTIzIDQ1IiwiY2l0eSI6IkFua2Vib3JnIiwicmVnaW9uIjoiIiwiY291bnRyeSI6IlNFIiwiZW1haWwiOiJ5b3VyZW1haWxAZW1haWwuY29tIiwicGhvbmUiOiIrNDY3NjUyNjAwMDAifSwic2hpcHBpbmdfYWRkcmVzcyI6eyJnaXZlbl9uYW1lIjoiVGVzdHBlcnNvbi1zZSIsImZhbWlseV9uYW1lIjoiQXBwcm92ZWQiLCJ0aXRsZSI6IiIsInN0cmVldF9hZGRyZXNzIjoiU3TDpXJnYXRhbiAxIiwic3RyZWV0X2FkZHJlc3MyIjoiIiwicG9zdGFsX2NvZGUiOiIxMjMgNDUiLCJjaXR5IjoiQW5rZWJvcmciLCJyZWdpb24iOiIiLCJjb3VudHJ5IjoiU0UiLCJlbWFpbCI6InlvdXJlbWFpbEBlbWFpbC5jb20iLCJwaG9uZSI6Iis0Njc2NTI2MDAwMCJ9LCJjcmVhdGVkX2F0IjoiMjAyMC0wOS0yOVQxNDozOTo1OC4wMDBaIiwicHVyY2hhc2VfY291bnRyeSI6IlNFIiwiZXhwaXJlc19hdCI6IjIwMjAtMTEtMTBUMDA6MDA6MDAuMDAwWiIsImNhcHR1cmVzIjpbeyJjYXB0dXJlX2lkIjoiN2Q4ZjYzZWUtMmM2Ny00ZDZlLWI3NjAtNTE0MmQ0ZmE5NDhkIiwia2xhcm5hX3JlZmVyZW5jZSI6IjFWSFNISzFRLTEiLCJjYXB0dXJlZF9hbW91bnQiOjk5MDAsImNhcHR1cmVkX2F0IjoiMjAyMC0wOS0zMFQxNDo0MzoyNi44NDNaIiwiZGVzY3JpcHRpb24iOiIiLCJvcmRlcl9saW5lcyI6W3sicmVmZXJlbmNlIjoiMSIsInR5cGUiOiJkaWdpdGFsIiwicXVhbnRpdHkiOjEsInF1YW50aXR5X3VuaXQiOiIiLCJuYW1lIjoiQlJGLWFuYWx5cyIsInRvdGFsX2Ftb3VudCI6OTkwMCwidW5pdF9wcmljZSI6OTkwMCwidG90YWxfZGlzY291bnRfYW1vdW50IjowLCJ0YXhfcmF0ZSI6MjUwMCwidG90YWxfdGF4X2Ftb3VudCI6MTk4MH1dLCJyZWZ1bmRlZF9hbW91bnQiOjAsImJpbGxpbmdfYWRkcmVzcyI6eyJnaXZlbl9uYW1lIjoiVGVzdHBlcnNvbi1zZSIsImZhbWlseV9uYW1lIjoiQXBwcm92ZWQiLCJ0aXRsZSI6IiIsInN0cmVldF9hZGRyZXNzIjoiU3TDpXJnYXRhbiAxIiwic3RyZWV0X2FkZHJlc3MyIjoiIiwicG9zdGFsX2NvZGUiOiIxMjMgNDUiLCJjaXR5IjoiQW5rZWJvcmciLCJyZWdpb24iOiIiLCJjb3VudHJ5IjoiU0UiLCJlbWFpbCI6InlvdXJlbWFpbEBlbWFpbC5jb20iLCJwaG9uZSI6Iis0Njc2NTI2MDAwMCJ9LCJzaGlwcGluZ19hZGRyZXNzIjp7ImdpdmVuX25hbWUiOiJUZXN0cGVyc29uLXNlIiwiZmFtaWx5X25hbWUiOiJBcHByb3ZlZCIsInRpdGxlIjoiIiwic3RyZWV0X2FkZHJlc3MiOiJTdMOlcmdhdGFuIDEiLCJzdHJlZXRfYWRkcmVzczIiOiIiLCJwb3N0YWxfY29kZSI6IjEyMyA0NSIsImNpdHkiOiJBbmtlYm9yZyIsInJlZ2lvbiI6IiIsImNvdW50cnkiOiJTRSIsImVtYWlsIjoieW91cmVtYWlsQGVtYWlsLmNvbSIsInBob25lIjoiKzQ2NzY1MjYwMDAwIn0sInNoaXBwaW5nX2luZm8iOltdfV0sInJlZnVuZHMiOlt7InJlZnVuZF9pZCI6ImRlMjIyZjYwLTFkZGYtNDhiNy1iNWNkLTBiMTFlOGUxOTU1MCIsInJlZnVuZGVkX2Ftb3VudCI6OTkwMCwicmVmdW5kZWRfYXQiOiIyMDIwLTA5LTMwVDIwOjE0OjQwLjYyMVoiLCJkZXNjcmlwdGlvbiI6IiIsIm9yZGVyX2xpbmVzIjpbeyJyZWZlcmVuY2UiOiIxIiwidHlwZSI6ImRpZ2l0YWwiLCJxdWFudGl0eSI6MSwicXVhbnRpdHlfdW5pdCI6IiIsIm5hbWUiOiJCUkYtYW5hbHlzIiwidG90YWxfYW1vdW50Ijo5OTAwLCJ1bml0X3ByaWNlIjo5OTAwLCJ0b3RhbF9kaXNjb3VudF9hbW91bnQiOjAsInRheF9yYXRlIjoyNTAwLCJ0b3RhbF90YXhfYW1vdW50IjoxOTgwfV19XSwiaW5pdGlhbF9wYXltZW50X21ldGhvZCI6eyJ0eXBlIjoiSU5WT0lDRSIsImRlc2NyaXB0aW9uIjoiUGF5IGxhdGVyIn19
+  recorded_at: Wed, 30 Sep 2020 20:14:40 GMT
+recorded_with: VCR 6.0.0

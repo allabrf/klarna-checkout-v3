@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.playground.klarna.com/checkout/v3/orders/
+    body:
+      encoding: UTF-8
+      string: '{"order_amount":9900,"order_tax_amount":1980,"purchase_country":"se","purchase_currency":"SEK","locale":"se-SE","order_lines":[{"type":"digital","reference":"11111","name":"Funny
+        Service","quantity":1,"unit_price":9900,"tax_rate":2500,"total_amount":9900,"total_discount_amount":0,"total_tax_amount":1980}],"merchant_urls":{"terms":"http://www.example.com/terms","checkout":"http://www.example.com/checkout","confirmation":"http://www.example.com/confirmation_uri","push":"http://www.example.com/push"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Basic dGhlX2R1ZGU6YWJpZGVz
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 401
+      message:
+    headers:
+      date:
+      - Fri, 25 Sep 2020 08:17:29 GMT
+      content-type:
+      - text/html
+      content-length:
+      - '176'
+      connection:
+      - keep-alive
+      server:
+      - openresty
+      www-authenticate:
+      - Basic realm="very closed site"
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>401 Authorization Required</title></head>\r\n<body>\r\n<center><h1>401
+        Authorization Required</h1></center>\r\n<hr><center>openresty</center>\r\n</body>\r\n</html>\r\n"
+  recorded_at: Fri, 25 Sep 2020 08:17:29 GMT
+recorded_with: VCR 6.0.0

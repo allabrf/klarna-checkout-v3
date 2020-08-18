@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.playground.klarna.com/ordermanagement/v1/orders/d887e027-e135-6413-8098-2647ab04b6f0/acknowledge
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Basic UEsyNjk2OF84NmIzNopeMDRlYjc6d1pZaVI1dWE4NlVIaUczQw==
+  response:
+    status:
+      code: 204
+      message:
+    headers:
+      date:
+      - Wed, 16 Sep 2020 13:46:32 GMT
+      connection:
+      - keep-alive
+      server:
+      - openresty
+      transaction-id:
+      - 8b38f7d3-f98a-454f-8bce-506914ff84d1
+      x-content-type-options:
+      - nosniff
+      x-xss-protection:
+      - 1; mode=block
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      x-frame-options:
+      - DENY
+      klarna-correlation-id:
+      - 4065834b-c8a0-43e5-b5b7-f6ad3f54f4b0
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 16 Sep 2020 13:46:32 GMT
+recorded_with: VCR 6.0.0

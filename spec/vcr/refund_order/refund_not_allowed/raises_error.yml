@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.playground.klarna.com/ordermanagement/v1/orders/8320c1e7-8f90-6056-a62d-588b2dda6532
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Basic <base64 string>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      date:
+      - Mon, 24 Aug 2020 09:41:29 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - openresty
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-xss-protection:
+      - 1; mode=block
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      x-frame-options:
+      - DENY
+      klarna-correlation-id:
+      - c66317ca-f2d1-4b7f-b1bd-fba6d64fae6b
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvcmRlcl9pZCI6IjgzMjBjMWU3LThmOTAtNjA1Ni1hNjJkLTU4OGIyZGRhNjUzMiIsInN0YXR1cyI6IkNBTkNFTExFRCIsImZyYXVkX3N0YXR1cyI6IkFDQ0VQVEVEIiwib3JkZXJfYW1vdW50Ijo5OTAwLCJvcmlnaW5hbF9vcmRlcl9hbW91bnQiOjk5MDAsImNhcHR1cmVkX2Ftb3VudCI6MCwicmVmdW5kZWRfYW1vdW50IjowLCJyZW1haW5pbmdfYXV0aG9yaXplZF9hbW91bnQiOjk5MDAsInB1cmNoYXNlX2N1cnJlbmN5IjoiU0VLIiwibG9jYWxlIjoic3YtU0UiLCJvcmRlcl9saW5lcyI6W3sicmVmZXJlbmNlIjoiMSIsInR5cGUiOiJkaWdpdGFsIiwicXVhbnRpdHkiOjEsInF1YW50aXR5X3VuaXQiOiIiLCJuYW1lIjoiQlJGLWFuYWx5cyIsInRvdGFsX2Ftb3VudCI6OTkwMCwidW5pdF9wcmljZSI6OTkwMCwidG90YWxfZGlzY291bnRfYW1vdW50IjowLCJ0YXhfcmF0ZSI6MjUwMCwidG90YWxfdGF4X2Ftb3VudCI6MTk4MH1dLCJrbGFybmFfcmVmZXJlbmNlIjoiNkRHRFREUkciLCJjdXN0b21lciI6eyJkYXRlX29mX2JpcnRoIjoiMTk0MS0wMy0yMSIsInR5cGUiOiJwZXJzb24ifSwiYmlsbGluZ19hZGRyZXNzIjp7ImdpdmVuX25hbWUiOiJUZXN0cGVyc29uLXNlIiwiZmFtaWx5X25hbWUiOiJBcHByb3ZlZCIsInRpdGxlIjoiIiwic3RyZWV0X2FkZHJlc3MiOiJTdMOlcmdhdGFuIDEiLCJzdHJlZXRfYWRkcmVzczIiOiIiLCJwb3N0YWxfY29kZSI6IjEyMyA0NSIsImNpdHkiOiJBbmtlYm9yZyIsInJlZ2lvbiI6IiIsImNvdW50cnkiOiJTRSIsImVtYWlsIjoieW91cmVtYWlsQGVtYWlsLmNvbSIsInBob25lIjoiKzQ2NzY1MjYwMDAwIn0sInNoaXBwaW5nX2FkZHJlc3MiOnsiZ2l2ZW5fbmFtZSI6IlRlc3RwZXJzb24tc2UiLCJmYW1pbHlfbmFtZSI6IkFwcHJvdmVkIiwidGl0bGUiOiIiLCJzdHJlZXRfYWRkcmVzcyI6IlN0w6VyZ2F0YW4gMSIsInN0cmVldF9hZGRyZXNzMiI6IiIsInBvc3RhbF9jb2RlIjoiMTIzIDQ1IiwiY2l0eSI6IkFua2Vib3JnIiwicmVnaW9uIjoiIiwiY291bnRyeSI6IlNFIiwiZW1haWwiOiJ5b3VyZW1haWxAZW1haWwuY29tIiwicGhvbmUiOiIrNDY3NjUyNjAwMDAifSwiY3JlYXRlZF9hdCI6IjIwMjAtMDgtMjFUMTE6MDA6MzguMDAwWiIsInB1cmNoYXNlX2NvdW50cnkiOiJTRSIsImV4cGlyZXNfYXQiOiIyMDIwLTEwLTAyVDAwOjAwOjAwLjAwMFoiLCJjYXB0dXJlcyI6W10sInJlZnVuZHMiOltdLCJpbml0aWFsX3BheW1lbnRfbWV0aG9kIjp7InR5cGUiOiJDQVJEIiwiZGVzY3JpcHRpb24iOiJDYXJkIn19
+  recorded_at: Mon, 24 Aug 2020 09:41:29 GMT
+recorded_with: VCR 6.0.0
