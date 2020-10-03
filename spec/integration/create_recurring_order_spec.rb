@@ -4,7 +4,7 @@ require 'spec_helper'
 require 'support/vcr_setup'
 
 RSpec.describe 'create a recurring order', :vcr do
-  let(:header) {
+  let(:header) do
     {
       purchase_country: 'SE',
       purchase_currency: 'SEK',
@@ -12,9 +12,9 @@ RSpec.describe 'create a recurring order', :vcr do
       order_amount: 9900,
       order_tax_amount: 1980
     }
-  }
+  end
 
-  let(:items) {
+  let(:items) do
     [
       {
         type: 'digital',
@@ -28,12 +28,14 @@ RSpec.describe 'create a recurring order', :vcr do
         total_tax_amount: 1980
       }
     ]
-  }
+  end
 
   let(:checkout_url) { 'http://example.com/checkout' }
 
   context 'with recurring argument' do
-    let(:order) { Klarna::Checkout::Order.new(header: header, items: items, recurring: true, checkout_url: checkout_url) }
+    let(:order) do
+      Klarna::Checkout::Order.new(header: header, items: items, recurring: true, checkout_url: checkout_url)
+    end
 
     before do
       order.execute
@@ -64,4 +66,3 @@ RSpec.describe 'create a recurring order', :vcr do
     end
   end
 end
-

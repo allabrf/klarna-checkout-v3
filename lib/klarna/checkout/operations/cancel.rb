@@ -5,7 +5,7 @@ module Klarna
     module Operations
       module Cancel
         def cancel_order
-          request = https_connection.post do |req|
+          response = https_connection.post do |req|
             req.url "/ordermanagement/v1/orders/#{@reference}/cancel"
             req.options.timeout = 10
 
@@ -13,11 +13,12 @@ module Klarna
             req.headers['Content-Type']  = 'application/json'
           end
 
-          if request.status == 204
-            @status = 'CANCELLED'
-          else
+          unless response.status == 204
             raise Klarna::Checkout::Errors::OrderCancelError.new(@status, 'cancel_not_allowed')
           end
+
+          @status = 'CANCELLED'
+          response
         end
       end
     end

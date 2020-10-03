@@ -1,0 +1,31 @@
+image: "ruby:latest"
+
+cache:
+  paths:
+    - vendor/
+
+variables:
+  BUNDLE_PATH: vendor
+  RUBYOPT: "-W:no-deprecated -W:no-experimental"
+
+before_script:
+  - bundle check || bundle install --jobs=2
+
+stages:
+  - lint
+  - test
+
+Linter:
+  stage: lint
+  script:
+    - bundle exec rubocop --parallel
+  only:
+    - merge_requests
+
+Rspec:
+  stage: test
+  script:
+    - RAILS_ENV=test bundle exec rspec
+
+  only:
+    - merge_requests

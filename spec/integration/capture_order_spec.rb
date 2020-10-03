@@ -8,11 +8,9 @@ RSpec.describe 'capture order', :vcr do
     let(:ref)   { 'fe558eb2-9124-6c73-8291-b1d449d5d44c' }
     let(:order) { Klarna::Checkout::Order.find(ref) }
 
-    before do
-      order.capture
-    end
-
     it 'has an updated status' do
+      order.capture
+
       expect(order.status).to eql 'CAPTURED'
     end
   end
@@ -22,7 +20,7 @@ RSpec.describe 'capture order', :vcr do
     let(:order) { Klarna::Checkout::Order.find(ref) }
 
     it 'raises error' do
-      expect{ order.capture }.to raise_error(Klarna::Checkout::Errors::OrderCaptureError)
+      expect { order.capture }.to raise_error(Klarna::Checkout::Errors::OrderCaptureError)
     end
   end
 end

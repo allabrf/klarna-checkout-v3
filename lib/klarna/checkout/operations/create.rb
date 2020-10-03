@@ -4,16 +4,16 @@ module Klarna
   module Checkout
     module Operations
       module Create
-        CREATE_ORDER_PATH = '/checkout/v3/orders/'.freeze
+        CREATE_ORDER_PATH = '/checkout/v3/orders/'
 
         def create(header, items)
           payload = header.merge({
-            order_lines: items,
-            merchant_urls: merchant_urls
-          })
+                                   order_lines: items,
+                                   merchant_urls: merchant_urls
+                                 })
 
-          payload.merge!({recurring: true}) if @recurring
-          payload.merge!({customer: @customer}) if @customer
+          payload.merge!({ recurring: true }) if @recurring
+          payload.merge!({ customer: @customer }) if @customer
           @api_order = payload
 
           parse_response(

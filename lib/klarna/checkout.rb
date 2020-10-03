@@ -36,6 +36,9 @@ require 'klarna/checkout/operations/create_recurring.rb'
 require 'klarna/checkout/resources/authentication.rb'
 require 'klarna/checkout/resources/merchant_urls.rb'
 
+# Order validations
+require 'klarna/checkout/validations/order_validations.rb'
+
 # The order class
 require 'klarna/checkout/order.rb'
 
@@ -43,10 +46,10 @@ require 'klarna/checkout/order.rb'
 module Klarna
   module Checkout
     class << self
-      attr_accessor :configuration
+      attr_writer :configuration
 
       def configuration
-        @@configuration ||= Klarna::Checkout::Configuration.new
+        @configuration ||= Klarna::Checkout::Configuration.new
       end
 
       def configure

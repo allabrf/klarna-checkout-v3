@@ -5,29 +5,31 @@ module Klarna
     module Operations
       module Capture
         def capture_order(amount = nil)
-          capture_amount = amount.nil? ? @klarna_response['order_amount'] : amount
+          response = execute_capture_request(amount)
 
-          payload = {
-            'captured_amount': capture_amount,
-            'order_lines': @items
-          }.to_json
+          unless response.status == 201
+            raise Klarna::Checkout::Errors::OrderCaptureError.new(@status, 'capture_not_allowed')
+          end
 
-          request = https_connection.post do |req|
+          @status = 'CAPTURED'
+          response
+        end
+
+        private
+
+        def execute_capture_request(amount)
+          https_connection.post do |req|
             req.url "/ordermanagement/v1/orders/#{@reference}/captures"
             req.options.timeout = 10
 
             req.headers['Authorization'] = authorization
             req.headers['Content-Type']  = 'application/json'
-            req.body = payload
-          end
 
-          if request.status == 201
-            @status = 'CAPTURED'
-          else
-            raise Klarna::Checkout::Errors::OrderCaptureError.new(@status, 'capture_not_allowed')
+            req.body = {
+              'captured_amount': amount.nil? ? @klarna_response['order_amount'] : amount,
+              'order_lines': @items
+            }.to_json
           end
-
-          request
         end
       end
     end

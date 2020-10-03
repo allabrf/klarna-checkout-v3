@@ -22,7 +22,7 @@ RSpec.describe 'cancel order', :vcr do
     let(:order) { Klarna::Checkout::Order.find(ref) }
 
     it 'raises error' do
-      expect{ order.cancel }.to raise_error(Klarna::Checkout::Errors::OrderCancelError)
+      expect { order.cancel }.to raise_error(Klarna::Checkout::Errors::OrderCancelError)
     end
   end
 end

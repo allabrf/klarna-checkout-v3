@@ -14,7 +14,7 @@ module Klarna
         private
 
         def encode_base64(username, password)
-          'Basic ' + Base64::encode64("#{username}:#{password}").chomp
+          'Basic ' + Base64.encode64("#{username}:#{password}").chomp
         end
       end
     end
