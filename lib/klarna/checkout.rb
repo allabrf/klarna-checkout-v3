@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Gem dependencies
 require 'faraday'
 require 'json'
