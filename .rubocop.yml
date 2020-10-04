@@ -1,8 +1,14 @@
-Documentation:
+AllCops:
+  NewCops: enable
+
+Style/Documentation:
   Enabled: false
+
 Metrics/BlockLength:
   Max: 60
+
 Metrics/MethodLength:
   Max: 15
+
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
