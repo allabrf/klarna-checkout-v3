@@ -4,8 +4,8 @@ module Klarna
   module Checkout
     module ApiUtilities
       module ConnectionUtilities
-        KLARNA_SANDBOX_URL    = 'https://api.playground.klarna.com'
-        KLARNA_PRODUCTION_URL = 'https://api.klarna.com'
+        KLARNA_SANDBOX_URL    = 'https://api.playground.klarna.com'.freeze
+        KLARNA_PRODUCTION_URL = 'https://api.klarna.com'.freeze
 
         def host
           return KLARNA_PRODUCTION_URL if Klarna::Checkout.configuration.environment == 'production'

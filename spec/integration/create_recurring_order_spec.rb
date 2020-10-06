@@ -34,7 +34,10 @@ RSpec.describe 'create a recurring order', :vcr do
 
   context 'with recurring argument' do
     let(:order) do
-      Klarna::Checkout::Order.new(header: header, items: items, recurring: true, checkout_url: checkout_url)
+      Klarna::Checkout::Order.new(header: header,
+                                  items: items,
+                                  recurring: true,
+                                  checkout_url: checkout_url)
     end
 
     before do
@@ -63,6 +66,35 @@ RSpec.describe 'create a recurring order', :vcr do
 
     it 'does not contain a recurring field in body' do
       expect(order.klarna_response.recurring).to be_nil
+    end
+  end
+
+  context 'when total_discount_amount is not subtracted from total_amount' do
+    let(:bad_items) do
+      [
+        {
+          type: 'digital',
+          reference: '11111',
+          name: 'Funny Service',
+          quantity: 1,
+          unit_price: 9900,
+          tax_rate: 2500,
+          total_amount: 9900,
+          total_discount_amount: 1000,
+          total_tax_amount: 1980
+        }
+      ]
+    end
+
+    let(:order) do
+      Klarna::Checkout::Order.new(header: header,
+                                  items: bad_items,
+                                  recurring: true,
+                                  checkout_url: checkout_url)
+    end
+
+    it 'raises error' do
+      expect { order.execute }.to raise_error(Klarna::Checkout::Errors::OrderValidationError)
     end
   end
 end

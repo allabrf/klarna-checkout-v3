@@ -102,6 +102,22 @@ RSpec.describe 'create order', :vcr do
           order_tax_amount: 1980
         }
       end
+
+      let(:order) { Klarna::Checkout::Order.new(header: header, items: items, checkout_url: checkout_url) }
+
+      it 'raises error' do
+        expect { order.execute }.to raise_error(Klarna::Checkout::Errors::OrderValidationError)
+      end
+    end
+
+    describe 'order_tax_amount does not match sum of total_tax_amounts' do
+      let(:header) do
+        {
+          order_amount: 7900,
+          order_tax_amount: 1980
+        }
+      end
+
       let(:order) { Klarna::Checkout::Order.new(header: header, items: items, checkout_url: checkout_url) }
 
       it 'raises error' do
@@ -129,6 +145,7 @@ RSpec.describe 'create order', :vcr do
           }
         ]
       end
+
       let(:order) { Klarna::Checkout::Order.new(header: header, items: items, checkout_url: checkout_url) }
 
       it 'raises error' do
@@ -145,6 +162,7 @@ RSpec.describe 'create order', :vcr do
           order_tax_amount: 1980
         }
       end
+
       let(:order) { Klarna::Checkout::Order.new(header: header, items: items, checkout_url: checkout_url) }
 
       it 'raises error' do
@@ -172,6 +190,7 @@ RSpec.describe 'create order', :vcr do
           }
         ]
       end
+
       let(:order) { Klarna::Checkout::Order.new(header: header, items: items, checkout_url: checkout_url) }
 
       it 'raises error' do
