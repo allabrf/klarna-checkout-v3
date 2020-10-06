@@ -47,7 +47,7 @@ module Klarna
         # 3. [loop through all items] -> unit_price * quantity == total_amount
         def total_amount_validation
           @items.each do |i|
-            next if i[:quantity] * i[:unit_price] == i[:total_amount]
+            next if i[:quantity] * (i[:unit_price] - i[:total_discount_amount].to_i) == i[:total_amount]
 
             raise Klarna::Checkout::Errors::OrderValidationError.new(
               'inconsistent_order_line_totals', 'total_line_amount_not_matching_qty_times_unit_price'
@@ -58,7 +58,7 @@ module Klarna
         # 4. [loop through all items] -> total_tax_amount / (total_amount - total_tax_amount) == tax_rate * 10_000
         def total_tax_amount_validation
           @items.each do |i|
-            next unless i[:total_tax_amount] / (i[:total_amount] - i[:total_tax_amount]) == i[:tax_rate] * 10_000
+            next if i[:total_tax_amount] * 100 / (i[:total_amount] - i[:total_tax_amount]) == i[:tax_rate] / 100
 
             raise Klarna::Checkout::Errors::OrderValidationError.new(
               'inconsistent_order_line_total_tax', 'line_total_tax_amount_not_matching_tax_rate'

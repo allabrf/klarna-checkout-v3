@@ -12,35 +12,35 @@ require 'klarna/checkout/version'
 require 'klarna/checkout/configuration'
 
 # Utilities
-require 'klarna/checkout/api_utilities/connection_utilities.rb'
+require 'klarna/checkout/api_utilities/connection_utilities'
 require 'klarna/checkout/api_utilities/parse_response'
 
 # Errors
-require 'klarna/checkout/errors/order_validation_error.rb'
-require 'klarna/checkout/errors/order_capture_error.rb'
-require 'klarna/checkout/errors/order_cancel_error.rb'
-require 'klarna/checkout/errors/order_refund_error.rb'
-require 'klarna/checkout/errors/configuration_error.rb'
-require 'klarna/checkout/errors/order_not_found_error.rb'
+require 'klarna/checkout/errors/order_validation_error'
+require 'klarna/checkout/errors/order_capture_error'
+require 'klarna/checkout/errors/order_cancel_error'
+require 'klarna/checkout/errors/order_refund_error'
+require 'klarna/checkout/errors/configuration_error'
+require 'klarna/checkout/errors/order_not_found_error'
 
 # Operations
-require 'klarna/checkout/operations/acknowledge.rb'
-require 'klarna/checkout/operations/capture.rb'
-require 'klarna/checkout/operations/cancel.rb'
-require 'klarna/checkout/operations/create.rb'
-require 'klarna/checkout/operations/fetch.rb'
-require 'klarna/checkout/operations/refund.rb'
-require 'klarna/checkout/operations/create_recurring.rb'
+require 'klarna/checkout/operations/acknowledge'
+require 'klarna/checkout/operations/capture'
+require 'klarna/checkout/operations/cancel'
+require 'klarna/checkout/operations/create'
+require 'klarna/checkout/operations/fetch'
+require 'klarna/checkout/operations/refund'
+require 'klarna/checkout/operations/create_recurring'
 
 # Resources
-require 'klarna/checkout/resources/authentication.rb'
-require 'klarna/checkout/resources/merchant_urls.rb'
+require 'klarna/checkout/resources/authentication'
+require 'klarna/checkout/resources/merchant_urls'
 
 # Order validations
-require 'klarna/checkout/validations/order_validations.rb'
+require 'klarna/checkout/validations/order_validations'
 
 # The order class
-require 'klarna/checkout/order.rb'
+require 'klarna/checkout/order'
 
 # For configuration
 module Klarna
