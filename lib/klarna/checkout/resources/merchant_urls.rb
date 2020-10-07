@@ -7,7 +7,7 @@ module Klarna
         def merchant_urls
           {
             push: Klarna::Checkout.configuration.push_uri,
-            terms: Klarna::Checkout.configuration.terms_uri,
+            terms: @terms_url,
             confirmation: Klarna::Checkout.configuration.confirmation_uri,
             checkout: @checkout_url
           }

@@ -44,12 +44,13 @@ module Klarna
         fetch_checkout_order(ref)
       end
 
-      def initialize(header:, items:, recurring: false, customer: nil, checkout_url: nil)
+      def initialize(header:, items:, recurring: false, **args)
         @header    = header
         @items     = items
         @recurring = recurring
-        @customer  = customer
-        @checkout_url = checkout_url.nil? ? Klarna::Checkout.configuration.checkout_uri : checkout_url
+        @customer  = args[:customer].nil? ? {} : args[:customer]
+        @checkout_url = args[:checkout_url].nil? ? Klarna::Checkout.configuration.checkout_uri : args[:checkout_url]
+        @terms_url    = args[:terms_url].nil? ? Klarna::Checkout.configuration.terms_uri : args[:terms_url]
       end
 
       # Creates an order
