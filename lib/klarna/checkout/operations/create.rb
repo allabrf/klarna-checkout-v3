@@ -14,6 +14,7 @@ module Klarna
 
           payload.merge!({ recurring: true }) if @recurring
           payload.merge!({ customer: @customer }) if @customer
+          payload.merge!({ options: @options }) if @options
           @api_order = payload
 
           parse_response(

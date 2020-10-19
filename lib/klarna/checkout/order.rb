@@ -49,6 +49,7 @@ module Klarna
         @items     = items
         @recurring = recurring
         @customer  = args[:customer].nil? ? {} : args[:customer]
+        @options   = args[:options]
         @checkout_url = args[:checkout_url].nil? ? Klarna::Checkout.configuration.checkout_uri : args[:checkout_url]
         @terms_url    = args[:terms_url].nil? ? Klarna::Checkout.configuration.terms_uri : args[:terms_url]
       end

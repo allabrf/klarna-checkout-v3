@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    klarna-checkout (0.1.0)
+    klarna-checkout (0.1.1)
       faraday
 
 GEM
