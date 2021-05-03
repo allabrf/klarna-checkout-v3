@@ -3,22 +3,22 @@
 require_relative 'lib/klarna/checkout/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'klarna-checkout'
+  spec.name          = 'klarna-checkout-v3'
   spec.version       = Klarna::Checkout::VERSION
   spec.authors       = ['Sverrir Steindorsson', 'Mike Eyrikh']
   spec.email         = ['sverrir.steindorsson@allabrf.se']
 
   spec.summary       = 'A Ruby wrapper for the Klarna Checkout API.'
   spec.description   = 'The gem provides methods to fetch, create, capture, cancel and refund Klarna orders.'
-  spec.homepage      = 'https://www.rubygems.org/gems/klarna-checkout'
+  spec.homepage      = 'https://www.rubygems.org/gems/klarna-checkout-v3'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://gitlab.com/allabrf/klarna-checkout-v3'
-  spec.metadata['changelog_uri'] = 'https://gitlab.com/allabrf/klarna-checkout-v3/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://gitlab.com/qyre-ab/klarna-checkout-v3'
+  spec.metadata['changelog_uri'] = 'https://gitlab.com/qyre-ab/klarna-checkout-v3/CHANGELOG.md'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
