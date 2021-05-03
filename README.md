@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'klarna-checkout'
+gem 'klarna-checkout-v3'
 ```
 
 And then execute:
