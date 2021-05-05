@@ -28,7 +28,7 @@ module Klarna
 
         # 1. order_amount == sum of all items total_amounts
         def amount_validation
-          return if @items.map { |i| i[:total_amount] }.sum == @header[:order_amount]
+          return if @items.map { |i| i[:total_amount].to_i }.sum == @header[:order_amount].to_i
 
           raise Klarna::Checkout::Errors::OrderValidationError.new(
             'inconsistent_values', 'order_amount_not_matching_total_amounts'
@@ -37,7 +37,7 @@ module Klarna
 
         # 2. order_tax_amount == sum of all items total_tax_amounts
         def tax_amount_validation
-          return if @items.map { |i| i[:total_tax_amount] }.sum == @header[:order_tax_amount]
+          return if @items.map { |i| i[:total_tax_amount].to_i }.sum == @header[:order_tax_amount].to_i
 
           raise Klarna::Checkout::Errors::OrderValidationError.new(
             'inconsistent_values', 'total_tax_amount_not_matching_total_tax_amounts'
@@ -47,7 +47,7 @@ module Klarna
         # 3. [loop through all items] -> unit_price * quantity == total_amount
         def total_amount_validation
           @items.each do |i|
-            next if i[:quantity] * (i[:unit_price] - i[:total_discount_amount].to_i) == i[:total_amount]
+            next if i[:quantity].to_i * (i[:unit_price].to_i - i[:total_discount_amount].to_i) == i[:total_amount].to_i
 
             raise Klarna::Checkout::Errors::OrderValidationError.new(
               'inconsistent_order_line_totals', 'total_line_amount_not_matching_qty_times_unit_price'
@@ -58,7 +58,7 @@ module Klarna
         # 4. [loop through all items] -> total_tax_amount / (total_amount - total_tax_amount) == tax_rate * 10_000
         def total_tax_amount_validation
           @items.each do |i|
-            next if i[:total_tax_amount] * 100 / (i[:total_amount] - i[:total_tax_amount]) == i[:tax_rate] / 100
+            next if i[:total_tax_amount].to_i * 100 / (i[:total_amount].to_i - i[:total_tax_amount].to_i) == i[:tax_rate].to_i / 100
 
             raise Klarna::Checkout::Errors::OrderValidationError.new(
               'inconsistent_order_line_total_tax', 'line_total_tax_amount_not_matching_tax_rate'
