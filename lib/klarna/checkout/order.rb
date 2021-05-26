@@ -86,10 +86,10 @@ module Klarna
       end
 
       # Refunds the order through Klarna API
-      def refund
+      def refund(amount: nil, description: nil)
         raise Klarna::Checkout::Errors::OrderRefundError.new(@status, 'refund_not_allowed') unless @status == 'CAPTURED'
 
-        refund_order
+        refund_order(amount: amount, description: description)
       end
 
       private
