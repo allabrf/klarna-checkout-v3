@@ -44,7 +44,7 @@ module Klarna
         fetch_checkout_order(ref)
       end
 
-      def initialize(header:, items:, options:, recurring: false, customer: {} checkout_url: nil, terms_url: nil)
+      def initialize(header:, items:, options:, recurring: false, customer: {}, checkout_url: nil, terms_url: nil)
         @header       = header
         @items        = items
         @recurring    = recurring
