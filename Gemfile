@@ -12,7 +12,7 @@ gem 'vcr', '< 7.0'
 gem 'webmock', '< 4.0'
 
 group :development, :test do
-  gem 'pry', '< 1.0'
+  gem 'pry'
   gem 'pry-byebug'
   gem 'rubocop', require: false
 end
