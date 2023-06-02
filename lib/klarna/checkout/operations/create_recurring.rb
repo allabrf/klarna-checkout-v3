@@ -6,12 +6,12 @@ module Klarna
       module CreateRecurring
         def create_recurring_order(locale:, order_lines:, order_amount:, order_tax_amount:, purchase_currency:, recurring_token:)
           payload = {
-            'locale': locale,
-            'order_lines': order_lines,
-            'order_amount': order_amount,
-            'order_tax_amount': order_tax_amount,
-            'purchase_currency': purchase_currency,
-            'auto_capture': true
+            locale: locale,
+            order_lines: order_lines,
+            order_amount: order_amount,
+            order_tax_amount: order_tax_amount,
+            purchase_currency: purchase_currency,
+            auto_capture: true
           }
 
           JSON.parse(request(payload.to_json, recurring_token))
