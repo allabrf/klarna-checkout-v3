@@ -26,12 +26,12 @@ module Klarna
       end
 
       # For creating an order, using a recurring_token
-      def self.create_recurring(**args)
-        if args[:recurring_token].nil?
+      def self.create_recurring(locale:, order_lines:, order_amount:, order_tax_amount:, purchase_currency:, recurring_token:)
+        if recurring_token.blank?
           raise Klarna::Checkout::Errors::OrderValidationError.new('Argument missing', 'missing_recurring_token')
         end
 
-        create_recurring_order(args)
+        create_recurring_order(locale:, order_lines:, order_amount:, order_tax_amount:, purchase_currency:, recurring_token:)
       end
 
       # Returns an instance of the order
