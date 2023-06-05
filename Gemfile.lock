@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    klarna-checkout (0.1.4)
+    klarna-checkout-v3 (0.1.4)
       faraday
 
 GEM
@@ -75,7 +75,7 @@ PLATFORMS
 
 DEPENDENCIES
   faraday (= 2.7.5)
-  klarna-checkout!
+  klarna-checkout-v3!
   pry
   pry-byebug
   rake (< 14.0)
