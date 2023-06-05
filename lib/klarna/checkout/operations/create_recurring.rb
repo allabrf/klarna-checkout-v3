@@ -4,19 +4,17 @@ module Klarna
   module Checkout
     module Operations
       module CreateRecurring
-        # args contain the following:
-        # [{order_lines}], order_amount, order_tax_amount, purchase_currency, locale, recurring_token
-        def create_recurring_order(**args)
+        def create_recurring_order(locale:, order_lines:, order_amount:, order_tax_amount:, purchase_currency:, recurring_token:)
           payload = {
-            'locale': args[:locale],
-            'order_lines': args[:order_lines],
-            'order_amount': args[:order_amount],
-            'order_tax_amount': args[:order_tax_amount],
-            'purchase_currency': args[:purchase_currency],
-            'auto_capture': true
+            locale: locale,
+            order_lines: order_lines,
+            order_amount: order_amount,
+            order_tax_amount: order_tax_amount,
+            purchase_currency: purchase_currency,
+            auto_capture: true
           }
 
-          JSON.parse(request(payload.to_json, args[:recurring_token]))
+          JSON.parse(request(payload.to_json, recurring_token))
         end
 
         private

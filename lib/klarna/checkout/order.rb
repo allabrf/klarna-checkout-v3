@@ -26,12 +26,19 @@ module Klarna
       end
 
       # For creating an order, using a recurring_token
-      def self.create_recurring(**args)
-        if args[:recurring_token].nil?
+      def self.create_recurring(locale:, order_lines:, order_amount:, order_tax_amount:, purchase_currency:, recurring_token:)
+        if recurring_token.nil?
           raise Klarna::Checkout::Errors::OrderValidationError.new('Argument missing', 'missing_recurring_token')
         end
 
-        create_recurring_order(args)
+        create_recurring_order(
+          locale: locale,
+          order_lines: order_lines,
+          order_amount: order_amount,
+          order_tax_amount: order_tax_amount,
+          purchase_currency: purchase_currency,
+          recurring_token: recurring_token
+        )
       end
 
       # Returns an instance of the order
@@ -44,14 +51,14 @@ module Klarna
         fetch_checkout_order(ref)
       end
 
-      def initialize(header:, items:, recurring: false, **args)
-        @header    = header
-        @items     = items
-        @recurring = recurring
-        @customer  = args[:customer].nil? ? {} : args[:customer]
-        @options   = args[:options]
-        @checkout_url = args[:checkout_url].nil? ? Klarna::Checkout.configuration.checkout_uri : args[:checkout_url]
-        @terms_url    = args[:terms_url].nil? ? Klarna::Checkout.configuration.terms_uri : args[:terms_url]
+      def initialize(header:, items:, options: {}, recurring: false, customer: {}, checkout_url: nil, terms_url: nil)
+        @header       = header
+        @items        = items
+        @recurring    = recurring
+        @customer     = customer
+        @options      = options
+        @checkout_url = checkout_url || Klarna::Checkout.configuration.checkout_uri
+        @terms_url    = terms_url || Klarna::Checkout.configuration.terms_uri
       end
 
       # Creates an order
@@ -86,10 +93,10 @@ module Klarna
       end
 
       # Refunds the order through Klarna API
-      def refund
+      def refund(amount: nil, description: nil)
         raise Klarna::Checkout::Errors::OrderRefundError.new(@status, 'refund_not_allowed') unless @status == 'CAPTURED'
 
-        refund_order
+        refund_order(amount: amount, description: description)
       end
 
       private

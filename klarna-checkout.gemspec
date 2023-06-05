@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'A Ruby wrapper for the Klarna Checkout API.'
   spec.description   = 'The gem provides methods to fetch, create, capture, cancel and refund Klarna orders.'
-  spec.homepage      = 'https://www.rubygems.org/gems/klarna-checkout'
+  spec.homepage      = 'https://www.rubygems.org/gems/klarna-checkout-v3'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
 
@@ -31,6 +31,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'faraday'
 
-  spec.add_development_dependency 'pry', '~> 0.13.1'
-  spec.add_development_dependency 'rspec', '~> 3.2'
+  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'rspec', '< 4'
 end

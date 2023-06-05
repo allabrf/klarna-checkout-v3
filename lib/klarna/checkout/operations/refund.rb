@@ -4,8 +4,8 @@ module Klarna
   module Checkout
     module Operations
       module Refund
-        def refund_order(amount = nil)
-          response = execute_refund_request(amount)
+        def refund_order(amount: nil, description: nil)
+          response = execute_refund_request(amount, description)
 
           unless response.status == 201
             raise Klarna::Checkout::Errors::OrderRefundError.new(@status, 'refund_not_allowed')
@@ -17,7 +17,7 @@ module Klarna
 
         private
 
-        def execute_refund_request(amount)
+        def execute_refund_request(amount, description = nil)
           https_connection.post do |req|
             req.url "/ordermanagement/v1/orders/#{@reference}/refunds"
             req.options.timeout = 10
@@ -26,6 +26,7 @@ module Klarna
             req.headers['Content-Type']  = 'application/json'
             req.body = {
               'refunded_amount': amount.nil? ? @klarna_response['order_amount'] : amount,
+              'description': description.nil? ? '' : description,
               'order_lines': @items
             }.to_json
           end
