@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in klarna.gemspec
 gemspec
 
-gem 'faraday', '2.7.5'
+gem 'faraday', '< 3.0'
 gem 'rake', '< 14.0'
 gem 'rspec', '< 4.0'
 gem 'vcr', '< 7.0'

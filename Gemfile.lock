@@ -74,7 +74,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  faraday (= 2.7.5)
+  faraday (< 3.0)
   klarna-checkout!
   pry
   pry-byebug
