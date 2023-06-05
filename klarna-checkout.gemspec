@@ -3,7 +3,7 @@
 require_relative 'lib/klarna/checkout/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'klarna-checkout-v3'
+  spec.name          = 'klarna-checkout'
   spec.version       = Klarna::Checkout::VERSION
   spec.authors       = ['Sverrir Steindorsson', 'Mike Eyrikh']
   spec.email         = ['sverrir.steindorsson@allabrf.se']
