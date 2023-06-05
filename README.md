@@ -9,16 +9,12 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'klarna-checkout-v3'
+gem 'klarna-checkout', git: 'git@github.com:allabrf/klarna-checkout-v3.git'
 ```
 
 And then execute:
 
     $ bundle install
-
-Or install it yourself as:
-
-    $ gem install klarna-checkout-v3
 
 ## Usage
 
