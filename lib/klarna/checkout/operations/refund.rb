@@ -25,9 +25,9 @@ module Klarna
             req.headers['Authorization'] = authorization
             req.headers['Content-Type']  = 'application/json'
             req.body = {
-              'refunded_amount': amount.nil? ? @klarna_response['order_amount'] : amount,
-              'description': description.nil? ? '' : description,
-              'order_lines': @items
+              refunded_amount: amount.nil? ? @klarna_response['order_amount'] : amount,
+              description: description.nil? ? '' : description,
+              order_lines: @items
             }.to_json
           end
         end

@@ -5,6 +5,7 @@ module Klarna
     module Operations
       module Fetch
         include Klarna::Checkout::ApiUtilities::ConnectionUtilities
+
         PATH_CHECKOUT  = '/checkout/v3/orders/'
         PATH_CONFIRMED = '/ordermanagement/v1/orders/'
 

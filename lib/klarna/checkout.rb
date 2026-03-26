@@ -3,7 +3,6 @@
 # Gem dependencies
 require 'faraday'
 require 'json'
-require 'set'
 
 # Gem version
 require 'klarna/checkout/version'

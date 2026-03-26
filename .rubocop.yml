@@ -1,15 +1,16 @@
+inherit_from: .rubocop_todo.yml
+
 AllCops:
   TargetRubyVersion: 3.3
   NewCops: enable
 
-Style/Documentation:
-  Enabled: false
-
 Metrics/BlockLength:
-  Max: 60
+  AllowedMethods:
+    - describe
+    - context
 
 Metrics/MethodLength:
   Max: 15
 
-Metrics/BlockLength:
-  ExcludedMethods: ['describe', 'context']
+Style/Documentation:
+  Enabled: false

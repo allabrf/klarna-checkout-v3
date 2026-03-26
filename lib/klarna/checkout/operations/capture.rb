@@ -26,8 +26,8 @@ module Klarna
             req.headers['Content-Type']  = 'application/json'
 
             req.body = {
-              'captured_amount': amount.nil? ? @klarna_response['order_amount'] : amount,
-              'order_lines': @items
+              captured_amount: amount.nil? ? @klarna_response['order_amount'] : amount,
+              order_lines: @items
             }.to_json
           end
         end
