@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.playground.klarna.com/ordermanagement/v1/orders/7ce4ee13-973c-6f49-a30e-85a0bc675997
+    uri: https://api.playground.kustom.co/ordermanagement/v1/orders/7ce4ee13-973c-6f49-a30e-85a0bc675997
     body:
       encoding: US-ASCII
       string: ''
@@ -53,7 +53,7 @@ http_interactions:
   recorded_at: Wed, 30 Sep 2020 20:14:39 GMT
 - request:
     method: post
-    uri: https://api.playground.klarna.com/ordermanagement/v1/orders/7ce4ee13-973c-6f49-a30e-85a0bc675997/refunds
+    uri: https://api.playground.kustom.co/ordermanagement/v1/orders/7ce4ee13-973c-6f49-a30e-85a0bc675997/refunds
     body:
       encoding: UTF-8
       string: '{"refunded_amount":9900,"order_lines":[{"reference":"1","type":"digital","quantity":1,"quantity_unit":"","name":"BRF-analys","total_amount":9900,"unit_price":9900,"total_discount_amount":0,"tax_rate":2500,"total_tax_amount":1980}]}'
@@ -78,7 +78,7 @@ http_interactions:
       server:
       - openresty
       location:
-      - https://api.playground.klarna.com/ordermanagement/v1/orders/7ce4ee13-973c-6f49-a30e-85a0bc675997/refunds/de222f60-1ddf-48b7-b5cd-0b11e8e19550
+      - https://api.playground.kustom.co/ordermanagement/v1/orders/7ce4ee13-973c-6f49-a30e-85a0bc675997/refunds/de222f60-1ddf-48b7-b5cd-0b11e8e19550
       refund-id:
       - de222f60-1ddf-48b7-b5cd-0b11e8e19550
       transaction-id:

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.playground.klarna.com/ordermanagement/v1/orders/d887e027-e135-6413-8098-2647ab04b6f0/acknowledge
+    uri: https://api.playground.kustom.co/ordermanagement/v1/orders/d887e027-e135-6413-8098-2647ab04b6f0/acknowledge
     body:
       encoding: US-ASCII
       string: ''

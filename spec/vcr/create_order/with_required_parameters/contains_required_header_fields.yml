@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.playground.klarna.com/checkout/v3/orders/
+    uri: https://api.playground.kustom.co/checkout/v3/orders/
     body:
       encoding: UTF-8
       string: '{"purchase_country":"SE","purchase_currency":"SEK","locale":"sv-SE","order_amount":9900,"order_tax_amount":1980,"order_lines":[{"type":"digital","reference":"11111","name":"Funny
@@ -36,7 +36,7 @@ http_interactions:
       klarna-correlation-id:
       - 7576a76a-31de-4f67-9956-33b7dd8f2aed
       location:
-      - https://api.playground.klarna.com/checkout/v3/orders/7d8b416d-23e2-63af-a748-0a86f27ee97c
+      - https://api.playground.kustom.co/checkout/v3/orders/7d8b416d-23e2-63af-a748-0a86f27ee97c
       render-time:
       - '10'
       strict-transport-security:

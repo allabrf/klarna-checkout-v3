@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.playground.klarna.com/ordermanagement/v1/orders/7ce4ee13-973c-6f49-a30e-85a0bc675997
+    uri: https://api.playground.kustom.co/ordermanagement/v1/orders/7ce4ee13-973c-6f49-a30e-85a0bc675997
     body:
       encoding: US-ASCII
       string: ''

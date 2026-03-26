@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.playground.klarna.com/checkout/v3/orders/
+    uri: https://api.playground.kustom.co/checkout/v3/orders/
     body:
       encoding: UTF-8
       string: '{"order_amount":9900,"order_tax_amount":1980,"purchase_country":"se","purchase_currency":"SEK","locale":"se-SE","order_lines":[{"type":"digital","reference":"11111","name":"Funny

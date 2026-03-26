@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.playground.klarna.com/customer-token/v1/tokens/93c69742-a378-43b7-9ae6-6d457dd4dfc6/order
+    uri: https://api.playground.kustom.co/customer-token/v1/tokens/93c69742-a378-43b7-9ae6-6d457dd4dfc6/order
     body:
       encoding: UTF-8
       string: '{"locale":"sv-SE","order_lines":[{"type":"digital","reference":"11111","name":"The
