@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'The gem provides methods to fetch, create, capture, cancel and refund Klarna orders.'
   spec.homepage      = 'https://www.rubygems.org/gems/klarna-checkout-v3'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 3.3.6')
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
