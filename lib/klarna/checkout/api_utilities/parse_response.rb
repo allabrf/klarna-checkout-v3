@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'ostruct'
+
 module Klarna
   module Checkout
     module ApiUtilities

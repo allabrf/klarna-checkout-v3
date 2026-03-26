@@ -26,10 +26,16 @@ RSpec.configure do |config|
     end
   end
 
-  # Enable flags like --only-failures and --next-failure
-  config.example_status_persistence_file_path = '.rspec_status'
+  # Allows RSpec to persist some state between runs in order to support
+  # the `--only-failures` and `--next-failure` CLI options. We recommend
+  # you configure your source control system to ignore this file.
+  config.example_status_persistence_file_path = 'spec/tmp/examples.txt'
 
-  # Disable RSpec exposing methods globally on `Module` and `main`
+  # Limits the available syntax to the non-monkey patched syntax that is
+  # recommended. For more details, see:
+  #   - http://rspec.info/blog/2012/06/rspecs-new-expectation-syntax/
+  #   - http://www.teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
+  #   - http://rspec.info/blog/2014/05/notable-changes-in-rspec-3/#zero-monkey-patching-mode
   config.disable_monkey_patching!
 
   config.expect_with :rspec do |c|

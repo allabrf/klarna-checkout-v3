@@ -5,14 +5,15 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in klarna.gemspec
 gemspec
 
-gem 'faraday', '< 3.0'
-gem 'rake', '< 14.0'
-gem 'rspec', '< 4.0'
-gem 'vcr', '< 7.0'
-gem 'webmock', '< 4.0'
-
 group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
-  gem 'rubocop', require: false
+  gem 'rake', '< 14.0'
+  gem 'rspec', '< 4.0'
+  gem 'rubocop', '~> 1.86.0', require: false
+end
+
+group :test do
+  gem 'vcr', '< 7.0'
+  gem 'webmock', '< 4.0'
 end

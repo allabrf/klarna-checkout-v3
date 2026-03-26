@@ -29,8 +29,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'faraday'
-
-  spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'rspec', '< 4'
+  spec.add_dependency 'base64'
+  spec.add_dependency 'faraday', '< 3.0'
+  spec.add_dependency 'ostruct'
 end
