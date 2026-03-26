@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    klarna-checkout-v3 (0.1.4)
+    klarna-checkout-v3 (0.1.5)
       base64
       faraday (< 3.0)
       ostruct
